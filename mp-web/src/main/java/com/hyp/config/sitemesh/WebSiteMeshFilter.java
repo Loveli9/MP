@@ -1,0 +1,40 @@
+package com.hyp.config.sitemesh;
+
+import org.sitemesh.builder.SiteMeshFilterBuilder;
+import org.sitemesh.config.ConfigurableSiteMeshFilter;
+
+public class WebSiteMeshFilter extends ConfigurableSiteMeshFilter {
+
+    /** 需要装饰的访问路径 */
+
+    private String contentPath="/sys/user,/sys/menu,/sys/dict,/sys/role,/sys/office,/sys/,/index,/monitor/*," +
+            "/blog/content**,/404,/model,/process,/task/**";
+
+    /** 装饰器页面路径 */
+
+    private String decoratorPath="/layouts";
+
+    /** 不需要装饰的访问路径,多个之间用英文逗号分隔 */
+
+    private String excludedPaths="*.js,*.css";
+
+    @Override
+    protected void applyCustomConfiguration(SiteMeshFilterBuilder builder) {
+        // 通过配置文件
+        if (contentPath == null) {
+            return;
+        }
+        String[] contentPaths = contentPath.split(",");
+        for (String path : contentPaths) {
+            builder.addDecoratorPath(path, decoratorPath);
+        }
+        if (excludedPaths == null) {
+            return;
+        }
+        String[] paths = excludedPaths.split(",");
+        for (String path : paths) {
+            builder.addExcludedPath(path);
+        }
+        builder.addTagRuleBundle(new ScriptTagRuleBundle());
+    }
+}

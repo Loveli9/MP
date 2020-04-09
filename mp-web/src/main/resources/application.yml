@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: hyp
+  profiles:
+    active: dev
+
+  aop:
+    proxy-target-class: true
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
+    settings:
+      template_update_delay: 0
+      classic_compatible: true
+      number_format: 0.######
+      template_exception_handler: ignore
+    request-context-attribute: rc
+    charset: UTF-8
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    timeout: 6000ms
+#    password: 123456
+    lettuce:
+      pool:
+        max-active: 1000
+        max-idle: 100
+        min-idle: 20
+
+sitemesh:
+  contentPath: /*
+  decoratorPath: classpath:/layouts/default.jsp
+  excludedPaths: /js/*,/assets/*,/css/*
+
+#management:
+#  security:
+#    enabled: false
+
+logging.level.project.user.UserClient: DEBUG
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.hyp.entity
+  global-config:
+    db-config:
+      id-type: id_worker
+      field-strategy: default
+      db-type: mysql
+    banner: false #关闭MyBatis-Plus自带的打印Banner
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+pms:
+  shiro:
+    cacheManager: redisCacheManager
+#security:
+#  basic:
+#    enabled: false
+
