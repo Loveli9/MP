@@ -19,7 +19,7 @@ show VARIABLES like 'innodb_change_buffer_max_size'
 
 /*查看InnoDB引擎状态*/
 show ENGINE INNODB STATUS
-/*显示有关存储引擎的操作信息*/
+/*显示有关存储引擎的操作信息（查看latch锁信息）*/
 show ENGINE INNODB MUTEX
 /*来查看当前运行的所有事务*/
 select * from information_schema.INNODB_TRX
