@@ -1,4 +1,18 @@
-db	
+
+/*
+参考博客：
+https://blog.csdn.net/baidu_39298625/article/details/98592631
+
+1.在bin所在的文件夹下创建mongo.config(或者mongo.conf)配置文档，在文档中加入数据和日志路径配置
+（mongodb目录下创建database，下面data和log两个文件，log下面创建mongodb.log）
+dbpath = D:\MongoDB\database\data
+logpath = D:\MongoDB\database\log\mongodb.log
+2.打开新的命令窗口，切换至bin路径下，输入下边命令，路径改为自己的config文件路径,后边的mongodb为服务名
+mongod --config "D:\Program Files\MongoDB\Server\4.0\mongo.config" -install -serviceName "mongodb"
+3.打开新的命令窗口，输入命令：net start mongodb
+*/
+
+db
 /*显示当前的数据库名称*/
 
 show dbs	
