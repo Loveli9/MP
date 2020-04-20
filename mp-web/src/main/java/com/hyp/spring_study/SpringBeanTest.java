@@ -1,8 +1,8 @@
 package com.hyp.spring_study;
 
-import com.hyp.java_reflect.entity.Person;
 import com.hyp.spring_study.spring_bean.A;
 import com.hyp.spring_study.spring_bean.AppConfig;
+import com.hyp.spring_study.spring_bean.Person;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -29,21 +29,21 @@ public class SpringBeanTest {
         //new ClassPathXmlApplicationContext xml 的方式
         //new AnnotationConfigApplicationContext 注解的方式
         //注解配置应用上下文
-//        AnnotationConfigApplicationContext ac1 =
-//                new AnnotationConfigApplicationContext(AppConfig.class);
-//        System.out.println(ac1.getBean("a"));
+        ApplicationContext ac1 = new AnnotationConfigApplicationContext(AppConfig.class);
+        System.out.println(ac1.getBean("person"));
         //默认加载文件系统的配置文件，主要配置文件放在项目下、本地上、类路径下（3种位置）
         //配置文件加载
-        ApplicationContext ac2 = new FileSystemXmlApplicationContext("classpath:beans.xml");
+        //ApplicationContext ac2 = new FileSystemXmlApplicationContext("WebRoot/WEB-INF/applicationContext.xml");
+        ApplicationContext ac2 = new FileSystemXmlApplicationContext("file:C/applicationContext.xml");
         //默认加载ClassPath路径下的配置文件
-        ApplicationContext ac3 = new ClassPathXmlApplicationContext("classpath:beans.xml");
+        ApplicationContext ac3 = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
         //person为配置文件bean中自定义的id名称
         Person person1 = (Person)ac2.getBean("person");
         //person为配置文件bean中自定义的id名称
         Person person2 = (Person)ac3.getBean("person");
 
         //资源的封装，类路径加载
-        Resource resource = new ClassPathResource("beans.xml");
+        Resource resource = new ClassPathResource("applicationContext.xml");
         //初始化spring容器的代码
         BeanFactory beanFactory = new XmlBeanFactory(resource);
         //调用Bean
