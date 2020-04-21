@@ -1,0 +1,24 @@
+获取bean
+org.springframework.beans.factory.support.AbstractBeanFactory#getBean(java.lang.String)
+获取bean
+org.springframework.beans.factory.support.AbstractBeanFactory#doGetBean
+从缓存获取singleBean
+org.springframework.beans.factory.support.DefaultSingletonBeanRegistry#getSingleton(java.lang.String)
+从objectFactory中获取bean
+org.springframework.beans.factory.support.DefaultSingletonBeanRegistry#getSingleton(java.lang.String, org.springframework.beans.factory.ObjectFactory<?>)
+加载bean
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean(java.lang.String, org.springframework.beans.factory.support.RootBeanDefinition, java.lang.Object[])
+
+核心创建bean：
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean
+
+创建bean实例
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBeanInstance
+加入缓存singletonFactories缓存
+org.springframework.beans.factory.support.DefaultSingletonBeanRegistry#addSingletonFactory
+属性填充
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#populateBean
+调用init-factory
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
+注册
+org.springframework.beans.factory.support.AbstractBeanFactory#registerDisposableBeanIfNecessary
