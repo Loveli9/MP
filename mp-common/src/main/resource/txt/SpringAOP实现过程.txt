@@ -1,0 +1,15 @@
+org.springframework.beans.factory.xml.BeanDefinitionParser.parse
+
+org.springframework.aop.config.AspectJAutoProxyBeanDefinitionParser.parse
+
+org.springframework.aop.config.AopNamespaceUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary
+
+注册AnnotationAwareAspectJAutoProxyCreator
+org.springframework.aop.config.AopConfigUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary(org.springframework.beans.factory.support.BeanDefinitionRegistry, java.lang.Object)
+
+注册或者升级AnnotationAwareAspectJAutoProxyCreator
+org.springframework.aop.config.AopConfigUtils.registerOrEscalateApcAsRequired
+处理proxy-target-class以及expose-proxy属性
+org.springframework.aop.config.AopNamespaceUtils.useClassProxyingIfNecessary
+
+org.springframework.aop.config.AopNamespaceUtils.registerComponentIfNecessary
