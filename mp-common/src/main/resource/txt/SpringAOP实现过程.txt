@@ -1,15 +1,36 @@
-org.springframework.beans.factory.xml.BeanDefinitionParser.parse
+org.springframework.aop.config.AopNamespaceHandler
 
 org.springframework.aop.config.AspectJAutoProxyBeanDefinitionParser.parse
 
+org.springframework.beans.factory.xml.BeanDefinitionParser.parse
+
 org.springframework.aop.config.AopNamespaceUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary
 
-注册AnnotationAwareAspectJAutoProxyCreator
+注册 AnnotationAwareAspectJAutoProxyCreator
 org.springframework.aop.config.AopConfigUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary(org.springframework.beans.factory.support.BeanDefinitionRegistry, java.lang.Object)
 
-注册或者升级AnnotationAwareAspectJAutoProxyCreator
+注册或者升级 AnnotationAwareAspectJAutoProxyCreator
 org.springframework.aop.config.AopConfigUtils.registerOrEscalateApcAsRequired
+AnnotationAwareAspectJAutoProxyCreator类
+org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
+
 处理proxy-target-class以及expose-proxy属性
 org.springframework.aop.config.AopNamespaceUtils.useClassProxyingIfNecessary
 
 org.springframework.aop.config.AopNamespaceUtils.registerComponentIfNecessary
+
+AOP逻辑开始
+org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization
+
+必要时包装给定的bean，即是否有资格被代理。
+org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary
+
+org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean
+
+org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors
+获取所有的增强
+org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator#findCandidateAdvisors
+实现：
+org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator#findCandidateAdvisors
+寻找所有增强中适用于bean的增强并应用
+org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply
