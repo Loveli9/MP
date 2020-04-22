@@ -24,9 +24,9 @@ org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcess
 
 必要时包装给定的bean，即是否有资格被代理。
 org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary
-
+为bean获取增强
 org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean
-
+找到合适的增强
 org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors
 获取所有的增强
 org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator#findCandidateAdvisors
@@ -34,3 +34,9 @@ org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator#find
 org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator#findCandidateAdvisors
 寻找所有增强中适用于bean的增强并应用
 org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply
+
+
+
+
+
+
