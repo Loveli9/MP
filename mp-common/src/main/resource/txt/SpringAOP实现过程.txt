@@ -42,3 +42,10 @@ org.springframework.aop.framework.ProxyFactory#getProxy(java.lang.ClassLoader)
 创建AOP代理
 org.springframework.aop.framework.ProxyCreatorSupport#createAopProxy
 org.springframework.aop.framework.DefaultAopProxyFactory#createAopProxy
+获取AOP代理
+（1）JdkDynamicAopProxy
+org.springframework.aop.framework.JdkDynamicAopProxy#getProxy(java.lang.ClassLoader)
+（2）CglibAopProxy
+org.springframework.aop.framework.CglibAopProxy#getProxy(java.lang.ClassLoader)
+
+
