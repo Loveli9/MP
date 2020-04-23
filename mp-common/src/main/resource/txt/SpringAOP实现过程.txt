@@ -21,10 +21,10 @@ org.springframework.aop.config.AopNamespaceUtils.registerComponentIfNecessary
 
 AOP逻辑开始
 org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization
-
 必要时包装给定的bean，即是否有资格被代理。
 org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary
-为bean获取增强
+
+（一）为bean获取增强
 org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean
 找到合适的增强
 org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors
@@ -35,8 +35,10 @@ org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreato
 寻找所有增强中适用于bean的增强并应用
 org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply
 
-
-
-
-
-
+（二）创建代理
+org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator#createProxy
+获取并创建代理
+org.springframework.aop.framework.ProxyFactory#getProxy(java.lang.ClassLoader)
+创建AOP代理
+org.springframework.aop.framework.ProxyCreatorSupport#createAopProxy
+org.springframework.aop.framework.DefaultAopProxyFactory#createAopProxy
