@@ -176,6 +176,7 @@
 	/*if (status == true)*/
 	insert into report_row_warning 
 	select * from report_row_warning
+	/*触发预警的条件是：报表其中的某一指标配置了预警点灯，然后就是该项目质量预警的周期超过了质量预警规则配置的周期*/
 	/** 发送邮件：mailService.sendMail(); **/
 
 /*七、数据收集配置*/
