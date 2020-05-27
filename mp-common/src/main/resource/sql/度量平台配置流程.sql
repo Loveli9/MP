@@ -151,17 +151,22 @@
 	select * from report_check where id = 93
 	/* report_row_ids = 532 */
 	/*预警处理流程*/
+	/*查看预警规则点灯的哪些指标（四个维度：质量、效率、进度、资源）*/
 	select * from early_warning_rule where project_no = 'HWHZP5FF1606F03X11'
 	select * from report_row where id = 532
 	/* report_id = 42 */
 	select * from report where id = 42
 	/*initCheckinfo*/
+	/*查看报表审核有哪些报表数据行*/
 	SELECT * FROM report_check WHERE (project_id = 'HWHZP5FF1606F03X11' AND report_id = 42) ORDER BY id ASC 
 	select * from report_row where report_id = 42
 	/** 527,528,530,531,532,533,534,535,536,537,538,539,541,542,630,631,632,633,634,635,636,637 */
 	select * from report_kpi where report_row_id in (527,528,530,531,532,533,534,535,536,537,538,539,541,542,630,631,632,633,634,635,636,637)
+	/*报表数据的每个kpi的值*/
 	select * from report_kpi where report_row_id = 527
+	/*查询每个指标配置的管理维度*/
 	select * from report_kpi_config where id in (-910,-909,-908,2,24,26,25,27,28)
+	/*如果这个指标设置了点灯*/
 	/*manage_group 1：质量、2：效率、3：进度、4：资源*/
 	select * from report_row_warning where id = 532
 	/* report_kpi_id ： 3586,3587,3588,3589,3590,3591,3592,3593,3594 */
