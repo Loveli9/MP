@@ -82,7 +82,7 @@ spring:
   mail:
     host: smtp.qq.com
     username: 1402477783
-    password: HuypLoveLy2019
+    password: 123
     default-encoding: UTF-8
 #--------------------------server设置---------------------------
 server:
