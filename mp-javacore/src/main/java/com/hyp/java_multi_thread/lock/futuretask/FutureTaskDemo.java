@@ -21,7 +21,7 @@ public class FutureTaskDemo {
         //异步添加任务
         for (int i = 0; i < 10; i++) {
             MyCallable callable = new MyCallable(1000);                       // 要执行的任务
-            FutureTask<String> futureTask = new FutureTask<String>(callable);
+            FutureTask<String> futureTask = new FutureTask<>(callable);
             executor.submit(futureTask);
             System.out.println("-----添加-----："+i);
             list.add(futureTask);
@@ -39,6 +39,7 @@ public class FutureTaskDemo {
  * 线程任务类
  */
 class MyCallable implements Callable<String> {
+
     private long waitTime;
 
     public MyCallable(int timeInMillis) {

@@ -1,4 +1,4 @@
-package com.hyp.java_multi_thread.lock.reentrant;
+package com.hyp.java_multi_thread.lock.lock.reentrantlock;
 
 import java.util.concurrent.locks.ReentrantLock;
 

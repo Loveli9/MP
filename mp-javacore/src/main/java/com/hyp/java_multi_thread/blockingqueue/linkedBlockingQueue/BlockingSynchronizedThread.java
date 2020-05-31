@@ -35,7 +35,7 @@ public class BlockingSynchronizedThread {
         @Override
         public void run() {
             int new_flag = flag++;
-            System.out.println(Thread.currentThread().getName() + "启动线程 " + new_flag);
+            System.out.println(Thread.currentThread().getName() + "启动线程：" + new_flag);
             if (new_flag == 0) {
                 for (int i = 0; i < size; i++) {
                     int b = new Random().nextInt(255);

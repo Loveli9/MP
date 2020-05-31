@@ -1,9 +1,9 @@
-package com.hyp.java_multi_thread.lock.reentrant;
+package com.hyp.java_multi_thread.lock.lock.reentrantlock;
 
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class TestPark {
+public class ParkTest {
 
     private static ReentrantLock reentrantLock = new ReentrantLock();
 

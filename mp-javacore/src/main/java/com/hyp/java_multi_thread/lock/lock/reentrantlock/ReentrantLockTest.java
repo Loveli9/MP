@@ -1,4 +1,4 @@
-package com.hyp.java_multi_thread.lock.reentrant;
+package com.hyp.java_multi_thread.lock.lock.reentrantlock;
 
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ReEntrantLockTest {
+public class ReentrantLockTest {
 
     public static void main(String[] args) {
         ExecutorService threadPool = Executors.newCachedThreadPool();

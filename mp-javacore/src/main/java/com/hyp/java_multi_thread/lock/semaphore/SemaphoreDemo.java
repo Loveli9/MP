@@ -16,11 +16,11 @@ public class SemaphoreDemo {
         public void run() {
             try {
                 semaphore.acquire();
-                System.out.println(getName() + " acquire");
-                System.out.println("睡眠两秒...");
+                System.out.println(getName() + "：acquire");
+                System.out.println(getName() + "睡眠两秒...");
                 Thread.sleep(2000);
                 semaphore.release();
-                System.out.println(getName() + " release ");
+                System.out.println(getName() + "：release ");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -34,6 +34,7 @@ public class DelayQueueExample {
 }
 
 class DelayTask implements Delayed {
+
     private static long currentTime = System.currentTimeMillis();
     protected final String taskName;
     protected final int timeCost;
