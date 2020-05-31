@@ -11,7 +11,7 @@ import java.util.Properties;
 
 @Service
 @Transactional
-public class MailService {
+public class MailSendService {
 
     @Autowired
     private Environment env;

@@ -3,6 +3,9 @@ package com.hyp.config.mvc;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.hyp.config.mvc.interceptor.LogInterceptor;
+import com.hyp.config.mvc.interceptor.MyHandlerInterceptor;
+import com.hyp.config.mvc.interceptor.TimeInterceptor;
 import com.hyp.config.mvc.listener.ReqInterceptor;
 import com.hyp.config.mvc.listener.USLocalDateFormatter;
 import com.hyp.config.sitemesh.WebSiteMeshFilter;
@@ -49,21 +52,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //过滤swagger
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
-
-        registry.addResourceHandler("/swagger-resources/**")
-                .addResourceLocations("classpath:/META-INF/resources/swagger-resources/");
-
-        registry.addResourceHandler("/swagger/**")
-                .addResourceLocations("classpath:/META-INF/resources/swagger*");
-
-        registry.addResourceHandler("/v2/api-docs/**")
-                .addResourceLocations("classpath:/META-INF/resources/v2/api-docs/");
-
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/swagger-resources/**").addResourceLocations("classpath:/META-INF/resources/swagger-resources/");
+        registry.addResourceHandler("/swagger/**").addResourceLocations("classpath:/META-INF/resources/swagger*");
+        registry.addResourceHandler("/v2/api-docs/**").addResourceLocations("classpath:/META-INF/resources/v2/api-docs/");
     }
 
     /**
@@ -140,9 +133,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
         //5.将convert添加到converters当中.
         converters.add(fastJsonHttpMessageConverter);
     }
+
+    /**
+     * 往拦截器注册器添加拦截器
+     * */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new ReqInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new MyHandlerInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new TimeInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new LogInterceptor()).addPathPatterns("/**");
     }
 
 }

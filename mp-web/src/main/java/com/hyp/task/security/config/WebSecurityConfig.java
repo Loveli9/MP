@@ -2,7 +2,6 @@ package com.hyp.task.security.config;
 
 import com.hyp.task.security.authentication.FailureAuthenticationHandler;
 import com.hyp.task.security.authentication.SuccessAuthenticationHandler;
-import com.hyp.task.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +21,6 @@ public class WebSecurityConfig {
     private FailureAuthenticationHandler failureAuthenticationHandler;
     @Autowired
     private SuccessAuthenticationHandler successAuthenticationHandler;
-    @Autowired
-    private UserService userService;
 
 //    /**
 //     * 注入身份管理器bean
