@@ -10,8 +10,9 @@ import java.util.concurrent.TimeUnit;
 public class ScheduledThreadPoolTest {
 
     public static void main(String[] args) {
-        test1();
-        //test2();
+//        test1();
+//        test2();
+        test3();
     }
 
     public static void test1() {
@@ -30,6 +31,15 @@ public class ScheduledThreadPoolTest {
                 System.out.println("当前线程：" + Thread.currentThread().getName() + "延迟3秒");
             }
         }, 3, TimeUnit.SECONDS);
+    }
+
+    public static void test3() {
+        ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
+        scheduledThreadPool.scheduleWithFixedDelay(new Runnable() {
+            public void run() {
+                System.out.println("当前线程：" + Thread.currentThread().getName() + "延迟3秒");
+            }
+        }, 3,1, TimeUnit.SECONDS);
     }
 
 }
